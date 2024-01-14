@@ -21,8 +21,8 @@ on:
     - cron: 0 0 * * *
 
 env:
-  REPO_URL: https://github.com/baiywt/openwrt
-  REPO_BRANCH: master
+  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_BRANCH: openwrt-23.05
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
@@ -70,10 +70,10 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: Update feeds
-      run: cd openwrt && ./scripts/feeds update -a
+      run: cd openwrt && ./scripts/feeds update -a  -f
 
     - name: Install feeds
-      run: cd openwrt && ./scripts/feeds install -a
+      run: cd openwrt && ./scripts/feeds install -a -f
 
     - name: Load custom configuration
       run: |

@@ -21,7 +21,7 @@ on:
     - cron: 0 0 * * *
 
 env:
-  REPO_URL: https://github.com/renatd72/last
+  REPO_URL: https://github.com/renatd72/coolsnow
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
